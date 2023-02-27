@@ -4,21 +4,19 @@ import { Container } from "react-bootstrap";
 import HastaListe from "./HastaListe";
 import doctors from "../helpers/doctor";
 import HastaEkle from "./HastaEkle";
-import data from "../helpers/data"
+import data from "../helpers/data";
 const Home = () => {
   const [veri, setVeri] = useState(data);
   const [selectDr, setSelectDr] = useState("");
   const [toggle, setToggle] = useState(true);
 
   const handleCompleted = (id) => {
-    setVeri(
-      veri.map((e) => (e.id === id ? { ...e, bittiMi: !e.bittiMi } : e))
-    );
+    setVeri(veri.map((e) => (e.id === id ? { ...e, bittiMi: !e.bittiMi } : e)));
   };
 
   const handleDelete = (id) => {
-    const result = veri.filter((i) => i.id !== id);
-    setVeri(result);
+  
+    setVeri(veri.filter((i) => i.id !== id))
   };
   const handleDr = (id) => {
     const result = doctors.filter((i) => i.id === id);
@@ -26,6 +24,8 @@ const Home = () => {
     setToggle(!toggle);
   };
   const addHasta = (newHasta) => {
+    // console.log(data);
+    // data.concat(newHasta);
     setVeri([...veri, newHasta]);
   };
   return (
