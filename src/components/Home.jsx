@@ -4,51 +4,9 @@ import { Container } from "react-bootstrap";
 import HastaListe from "./HastaListe";
 import doctors from "../helpers/doctor";
 import HastaEkle from "./HastaEkle";
+import data from "../helpers/data"
 const Home = () => {
-  const [veri, setVeri] = useState([
-    {
-      id: 1,
-      text: "Yavuz Selim",
-      day: "Dec 12th at 2:30pm",
-      bittiMi: false,
-      doktor: "DR Ayse Okur",
-    },
-    {
-      id: 2,
-      text: "Mihrimah Sultan",
-      day: "Dec 13th at 1:30pm",
-      bittiMi: true,
-      doktor: "DR Fatma Adil",
-    },
-    {
-      id: 3,
-      text: "Fatih Mehmet",
-      day: "Dec 14th at 3:00pm",
-      bittiMi: false,
-      doktor: "DR Oya Başar",
-    },
-    {
-      id: 4,
-      text: "İpek Bilir",
-      day: "Dec 12th at 2:30pm",
-      bittiMi: false,
-      doktor: "DR Ahmet Bilen",
-    },
-    {
-      id: 5,
-      text: "Haluk Yilmaz",
-      day: "Dec 13th at 1:30pm",
-      bittiMi: true,
-      doktor: "DR Ahmet Bilen",
-    },
-    {
-      id: 6,
-      text: "Ayşe Güler",
-      day: "Dec 14th at 3:00pm",
-      bittiMi: false,
-      doktor: "DR Oya Başar",
-    },
-  ]);
+  const [veri, setVeri] = useState(data);
   const [selectDr, setSelectDr] = useState("");
   const [toggle, setToggle] = useState(true);
 
