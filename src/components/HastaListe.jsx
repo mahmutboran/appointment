@@ -44,10 +44,10 @@ const HastaListe = ({ item, handleDelete, handleCompleted }) => {
           />
       <Collapse in={item.bittiMi}>
         <Card.Text
-          id="hasta-görüldü"
+          id="consulted"
           className="text-danger position-absolute  top-50 start-50  translate-middle "
         >
-          Hasta Görüldü
+          CONSULTED
         </Card.Text>
       </Collapse>
     </div>
