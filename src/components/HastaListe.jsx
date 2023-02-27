@@ -14,18 +14,18 @@ const HastaListe = ({ item, handleDelete, handleCompleted }) => {
             ? "success"
             : "secondary"
         }
-        style={item.bittiMi ? { width: "auto" ,borderLeft:"20px solid red" }:{ width: "auto"}}
+        style={
+          item.bittiMi
+            ? { width: "auto", borderLeft: "20px solid red" }
+            : { width: "auto" }
+        }
         className={
           item.bittiMi ? "m-5 text-decoration-line-through opacity-25 " : "m-5 "
         }
       >
         <Card.Header className="d-flex fs-4 ">
           <Container>{item.doktor}</Container>
-          <FaTrashAlt
-            onClick={() => handleDelete(item.id)}
-            className="fs-5 "
-            style={{ cursor: "pointer" }}
-          />
+          
         </Card.Header>
         <Card.Body
           aria-controls="hasta-görüldü"
@@ -37,8 +37,16 @@ const HastaListe = ({ item, handleDelete, handleCompleted }) => {
           <Card.Text>{item.text}</Card.Text>
         </Card.Body>
       </Card>
-      <Collapse in={item.bittiMi} >
-        <Card.Text id="hasta-görüldü" className="text-danger opacity-100 position-absolute  top-50 start-50  translate-middle ">
+      <FaTrashAlt
+            onClick={() => handleDelete(item.id)}
+            className="fs-5  position-absolute   "
+            style={{ cursor: "pointer",top:10 ,right:70}}
+          />
+      <Collapse in={item.bittiMi}>
+        <Card.Text
+          id="hasta-görüldü"
+          className="text-danger position-absolute  top-50 start-50  translate-middle "
+        >
           Hasta Görüldü
         </Card.Text>
       </Collapse>
