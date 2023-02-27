@@ -100,6 +100,7 @@ const Home = () => {
           handleDelete={handleDelete}
           toggle={toggle}
           setToggle={setToggle}
+          handleCompleted={handleCompleted}
         />
       )}
     </div>

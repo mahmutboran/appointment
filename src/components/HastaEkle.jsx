@@ -7,7 +7,7 @@ import { Container } from "react-bootstrap";
 import DatePicker from "react-datepicker";
 import uuid from "react-uuid";
 
-const HastaEkle = ({ selectDr, veri, handleDelete, addHasta,setToggle,toggle }) => {
+const HastaEkle = ({ selectDr, veri, handleDelete, addHasta,setToggle,toggle,  handleCompleted}) => {
   const result = veri.filter((i) => i.doktor === selectDr[0].doktor);
   const [startDate, setStartDate] = useState(new Date());
   const [newHasta, setNewHasta] = useState({
@@ -81,7 +81,7 @@ const HastaEkle = ({ selectDr, veri, handleDelete, addHasta,setToggle,toggle }) 
       <Container>
         {result.map((item) => {
           return (
-            <HastaListe item={item} handleDelete={handleDelete} key={item.id} />
+            <HastaListe item={item} handleDelete={handleDelete} key={item.id}  handleCompleted={handleCompleted} />
           );
         })}
       </Container>
